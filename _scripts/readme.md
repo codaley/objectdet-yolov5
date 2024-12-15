@@ -1,4 +1,6 @@
 ######################### TERMINAL TAB 1 #########################
+# Create new conda environment with Python 3.9 and activate it
+
 # Install project requirements:
 pip install -r requirements.txt
 
