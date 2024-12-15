@@ -1,0 +1,1 @@
+copy test, train & valid folders to this directory
