@@ -1,5 +1,5 @@
-train: ../dataset/train/images
-val: ../dataset/valid/images
+train: ../_dataset/train/images
+val: ../_dataset/valid/images
 
 nc: 2
 names: ['rock', 'bag']
