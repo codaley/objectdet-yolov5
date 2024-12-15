@@ -1,7 +1,4 @@
 ######################### TERMINAL TAB 1 #########################
-change working directory:
-cd objectdet-yolov5-master
-
 install project requirements:
 pip install -r requirements.txt
 
@@ -23,8 +20,5 @@ python _scripts/run_export.py --img 320 --weights runs/train/exp12/weights/best.
 
 
 ######################### TERMINAL TAB 2 #########################
-change working directory:
-cd objectdet-yolov5-master
-
 launch tensorboard session:
 tensorboard --logdir=runs/train --host=localhost --port=6006
