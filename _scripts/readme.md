@@ -1,9 +1,9 @@
 ######################### TERMINAL TAB 1 #########################
-install project requirements:
-pip install -r requirements.txt
-
 change working directory:
 cd objectdet-yolov5-master
+
+install project requirements:
+pip install -r requirements.txt
 
 call training script with:
 python _scripts/run_train.py --img 320 --batch 130 --epochs 170 --data _configs/dataset.yaml --cache --device 0 --patience 0
