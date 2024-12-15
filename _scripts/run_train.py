@@ -20,7 +20,7 @@ def main():
 
     # Construct the YOLOv5 training command
     command = [
-        "python", "yolov5/train.py",
+        "python", "objectdet-yolov5-master/train.py",
         "--img", str(args.img),
         "--batch", str(args.batch),
         "--epochs", str(args.epochs),
