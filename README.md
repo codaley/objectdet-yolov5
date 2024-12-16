@@ -139,17 +139,32 @@ The Android app is designed for seamless use with the pre-trained model, which i
 ### 1. Download the Android App Files
 Download the app files from [this Dropbox link](https://www.dropbox.com/scl/fi/7ohu93t3qp5k342bvu3xh/yolov5-example-app.zip?rlkey=vxoihjipwsmhvj0op7720078p&st=kcev2tkt&dl=0).
 
-### 2. Replace the Model
+### 2. Download and Set Up Android Studio
+Ensure that you have [Android Studio](https://developer.android.com/studio) installed on your system. Open the `/android` directory in Android Studio. This setup has been tested with:
+
+- **Android Studio Bumblebee**
+- **Gradle Plugin Version**: 3.5.0
+- **Gradle Version**: 5.4.1
+- **Gradle JDK**: 11.0.11
+
+### 3. Connect Your Android Device
+Connect your Android device to your computer using a USB cable. Ensure that USB debugging is enabled on the device. You can enable USB debugging by navigating to:
+
+```
+Settings > Developer Options > USB Debugging
+```
+
+### 4. Replace the Model
 Navigate to `android/app/src/main/assets/` and replace the existing `best-fp16.tflite` with your trained model. The filename **must exactly match** `best-fp16.tflite`.
 
-### 3. Update Input Size
+### 5. Update Input Size
 If your model uses an input size other than **320x320**, navigate to:
 ```
 android/app/src/main/java/org/tensorflow/lite/examples/detection/tflite/DetectorFactory.java
 ```
 Edit the `inputSize` tag to match the resolution your model was trained on.
 
-### 4. Adjust Detection Threshold
+### 6. Adjust Detection Threshold
 To modify the detection confidence threshold, navigate to:
 ```
 android/app/src/main/java/org/tensorflow/lite/examples/detection/MainActivity.java
@@ -161,8 +176,11 @@ MINIMUM_CONFIDENCE_TF_OD_API = 0.51f;
 - **Default**: 51% confidence.
 - **Customize**: Increase for fewer false positives or decrease to capture more objects.
 
-### 5. Modify Classes
+### 7. Modify Classes
 To add custom classes, edit the `customclasses.txt` file in the `assets` folder. Ensure each class is listed on a new line.
+
+### 8. Run the App
+Once you have replaced the files, made the necessary modifications, and connected your Android device, you can run the app by clicking the **Run** button in Android Studio. The app will be deployed to the connected Android device and will use the integrated model for real-time detection.
 
 ---
 
