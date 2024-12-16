@@ -171,9 +171,9 @@ android/app/src/main/java/org/tensorflow/lite/examples/detection/MainActivity.ja
 ```
 Update the following line:
 ```java
-MINIMUM_CONFIDENCE_TF_OD_API = 0.51f;
+MINIMUM_CONFIDENCE_TF_OD_API = 0.80f;
 ```
-- **Default**: 51% confidence.
+- **Default**: 80% confidence.
 - **Customize**: Increase for fewer false positives or decrease to capture more objects.
 
 ### 7. Modify Classes
