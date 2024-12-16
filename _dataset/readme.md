@@ -1,1 +1,1 @@
-copy test, train & valid folders to this directory
+Copy training, validation and test data to this directory.
