@@ -88,7 +88,7 @@ tensorboard --logdir=runs/train --host=localhost --port=6006
 ```
 This provides a visual overview of metrics such as **mAP**, **losses**, and learning rates. Placeholder for TensorBoard metrics screenshot:
 
-![TensorBoard Metrics Placeholder](media/tensorboard-metrics.png)
+!(media/tensorboard-metrics.png)
 
 ### 4. Exporting the Model
 Once training completes, export the model to TensorFlow Lite format:
