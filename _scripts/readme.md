@@ -5,7 +5,7 @@
 pip install -r requirements.txt
 
 ### Install CUDA specific torch and torchvision packages:
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+pip uninstall torch torchvision -y ; pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 
 ### Check CUDA availability:
 python -c "import torch; \
