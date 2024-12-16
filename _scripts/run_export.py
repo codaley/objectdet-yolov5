@@ -4,7 +4,7 @@ import subprocess
 def main():
     parser = argparse.ArgumentParser(description="Run YOLOv5 model export")
     parser.add_argument("--weights", type=str, required=True, help="Path to the trained weights (e.g., runs/train/exp/weights/best.pt)")
-    parser.add_argument("--device", type=str, default="cuda:0", help="Device for export (default: cuda:0)")
+    parser.add_argument("--device", type=str, default="cpu", help="Device for export (default: cpu)")
     parser.add_argument("--include", type=str, default="tflite", help="Format to export (default: tflite)")
     parser.add_argument("--img", type=int, default=320, help="Export image size (default: 320)")
 
