@@ -86,7 +86,7 @@ Launch TensorBoard to monitor training progress:
 ```bash
 tensorboard --logdir=runs/train --host=localhost --port=6006
 ```
-This provides a visual overview of metrics such as **mAP**, **losses**, and learning rates. Placeholder for TensorBoard metrics screenshot:
+This provides a visual overview of metrics such as **mAP**, **losses**, and learning rates:
 
 ![](media/tensorboard-metrics.png)
 
