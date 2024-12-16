@@ -10,6 +10,8 @@ While this project is not explicitly intended for autonomous driving systems, it
 - **Detecting a rock**: This could prompt a vehicle to swerve, avoiding potential damage.
 - **Detecting a bag**: This helps minimize unnecessary evasive actions, improving efficiency and safety.
 
+![Object Detection App](media/rockbag-yolov5-android.gif)
+
 This project builds upon a previous implementation trained with the high-level **TensorFlow Lite Model Maker** library. While TensorFlow Lite Model Maker provides a user-friendly interface for quick prototyping, this new project leverages the power and flexibility of **PyTorch** to create an entirely custom model, resulting in significant improvements in accuracy and adaptability. By transitioning to PyTorch and the YOLOv5 framework, this project enables precise control over the training process, model a...
 
 ### Why PyTorch?
