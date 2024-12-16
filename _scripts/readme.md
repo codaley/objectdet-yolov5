@@ -1,3 +1,5 @@
+# PREREQUISITES
+
 ### COPY train, test and valid folders to _dataset/
 
 ### EDIT dataset.yaml in _configs/ to match your dataset requirements
