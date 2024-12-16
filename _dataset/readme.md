@@ -1,1 +1,1 @@
-Copy training, validation and test data to this directory.
+Copy training, validation and test data to these subdirectories.
