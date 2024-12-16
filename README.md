@@ -4,6 +4,8 @@
 
 This project demonstrates the training and deployment of a custom object detection model using **YOLOv5m**, fine-tuned for detecting rocks and bags. The model is designed for efficient real-time inference on edge devices and is integrated into an **Android app** running on a **Pixel 7a**. The goal is to enable precise and lightweight object detection while ensuring user flexibility to customize the pipeline and app for their own use cases.
 
+![Object Detection App](media/rockbag-yolov5-android.gif)
+
 While this project is not explicitly intended for autonomous driving systems, it tackles challenges related to object misidentification in autonomous systems, such as distinguishing between rocks and bags, which can significantly impact decision-making and safety.
 
 **Example Logic:**
@@ -12,15 +14,13 @@ While this project is not explicitly intended for autonomous driving systems, it
 
 This project builds upon a previous implementation trained with the high-level **TensorFlow Lite Model Maker** library. While TensorFlow Lite Model Maker provides a user-friendly interface for quick prototyping, this new project leverages the power and flexibility of **PyTorch** to create an entirely custom model, resulting in significant improvements in accuracy and adaptability. By transitioning to PyTorch and the YOLOv5 framework, this project enables precise control over the training process, model architecture, and hyperparameter tuning, unlocking advanced capabilities for object detection.
 
-![Object Detection App](media/rockbag-yolov5-android.gif)
-
 ### Why PyTorch?
 - **Flexibility**: PyTorch offers granular control over every aspect of the model, from custom architectures to advanced optimization techniques.
 - **Performance**: The YOLOv5m model achieves higher accuracy and real-world reliability, benefiting from PyTorch’s robust ecosystem and active development.
 - **Scalability**: This project bolsters the model with **6x more data** than the original implementation, covering diverse environments, lighting conditions, close-ups, and distant views.
 - **Precision**: The model is fine-tuned using higher-resolution images and carefully optimized hyperparameters, resulting in superior accuracy metrics and real-world performance.
 
-By incorporating a significantly larger dataset and optimizing the training pipeline, this model excels in detecting objects with **improved mean Average Precision (mAP)**, high precision, and recall scores. These enhancements make the model highly reliable for real-world usage scenarios, even in challenging environments.
+By incorporating a significantly larger dataset and optimizing the training pipeline, this model excels in detecting objects with **improved mean Average Precision (mAP)**, high precision and recall scores. These enhancements make the model highly reliable for real-world usage scenarios, even in challenging environments.
 
 YOLOv5m, a mid-size variant of the YOLOv5 family, balances detection accuracy and inference speed. With an input image size of **320x320x3**, the model is optimized for deployment on devices with limited computational resources, achieving excellent results for bounding box predictions and object classification.
 
@@ -86,9 +86,6 @@ Launch TensorBoard to monitor training progress:
 ```bash
 tensorboard --logdir=runs/train --host=localhost --port=6006
 ```
-This provides a visual overview of metrics such as **mAP**, **losses**, and learning rates:
-
-![](media/tensorboard-metrics.png)
 
 ### 4. Exporting the Model
 Once training completes, export the model to TensorFlow Lite format:
@@ -137,16 +134,26 @@ To add custom classes, edit the `customclasses.txt` file in the `assets` folder.
 
 ### Key Metrics
 - **mAP@0.5**: ~0.982  
-- **mAP@0.5:0.95**: ~0.85  
-- **Precision**: >0.95  
-- **Recall**: ~0.96  
+- **mAP@0.5:0.95**: >0.85  
+- **Precision**: >0.98  
+- **Recall**: ~0.97  
 
 ### Training Loss Analysis
-- **Box Loss**: ~0.028  
-- **Cls Loss**: Stabilizes at a low value.  
-- **Obj Loss**: Steady decline to ~0.0045.
+- **Box Loss**: ~0.012  
+- **Cls Loss**: Stabilizes at ~5e-4.  
+- **Obj Loss**: Steady decline to ~4.5e-3.
+
+- ### Validation Loss Analysis
+- **Box Loss**: <0.012  
+- **Cls Loss**: Stabilizes to <1e-3.  
+- **Obj Loss**: Stabilizes to <2.2e-3. 
 
 Validation metrics confirm strong generalization with no overfitting.
+
+- ### Learning Rate Schedules
+The learning rate scheduler progressively reduces step size, balancing rapid initial convergence with fine-tuning in later epochs. The smooth decay ensures stable optimization, preventing overshooting and guiding the model to an optimal solution.
+
+![](media/tensorboard-metrics.png)
 
 ---
 
@@ -164,4 +171,4 @@ Potential enhancements include:
 
 ## Acknowledgments
 
-This project builds on the official [YOLOv5 repository](https://github.com/ultralytics/yolov5). Android integration leverages TensorFlow Lite examples for object detection.
+This project builds on the official [YOLOv5 repository](https://github.com/ultralytics/yolov5). Android integration leverages TensorFlow Lite example app for object detection.
