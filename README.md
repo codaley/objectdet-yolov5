@@ -12,6 +12,8 @@ While this project is not explicitly intended for autonomous driving systems, it
 
 This project builds upon a previous implementation trained with the high-level **TensorFlow Lite Model Maker** library. While TensorFlow Lite Model Maker provides a user-friendly interface for quick prototyping, this new project leverages the power and flexibility of **PyTorch** to create an entirely custom model, resulting in significant improvements in accuracy and adaptability. By transitioning to PyTorch and the YOLOv5 framework, this project enables precise control over the training process, model architecture, and hyperparameter tuning, unlocking advanced capabilities for object detection.
 
+![Object Detection App](media/rockbag-yolov5-android.gif)
+
 ### Why PyTorch?
 - **Flexibility**: PyTorch offers granular control over every aspect of the model, from custom architectures to advanced optimization techniques.
 - **Performance**: The YOLOv5m model achieves higher accuracy and real-world reliability, benefiting from PyTorch’s robust ecosystem and active development.
@@ -21,8 +23,6 @@ This project builds upon a previous implementation trained with the high-level *
 By incorporating a significantly larger dataset and optimizing the training pipeline, this model excels in detecting objects with **improved mean Average Precision (mAP)**, high precision, and recall scores. These enhancements make the model highly reliable for real-world usage scenarios, even in challenging environments.
 
 YOLOv5m, a mid-size variant of the YOLOv5 family, balances detection accuracy and inference speed. With an input image size of **320x320x3**, the model is optimized for deployment on devices with limited computational resources, achieving excellent results for bounding box predictions and object classification.
-
-![Object Detection App](media/rockbag-yolov5-android.gif)
 
 ---
 
