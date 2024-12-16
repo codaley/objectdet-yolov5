@@ -20,7 +20,7 @@ This project builds upon a previous implementation trained with the high-level *
 - **Scalability**: This project bolsters the model with **6x more data** than the original implementation, covering diverse environments, lighting conditions, close-ups, and distant views.
 - **Precision**: The model is fine-tuned using higher-resolution images and carefully optimized hyperparameters, resulting in superior accuracy metrics and real-world performance.
 
-By incorporating a significantly larger dataset and optimizing the training pipeline, this model excels in detecting objects with **improved mean Average Precision (mAP)**, high precision and recall scores. These enhancements make the model highly reliable for real-world usage scenarios, even in challenging environments.
+By incorporating a significantly larger dataset and optimizing the training pipeline, this model excels in detecting objects with improved mean Average Precision (mAP) and high precision and recall scores. These enhancements make the model highly reliable for real-world usage scenarios, even in challenging environments.
 
 YOLOv5m, a mid-size variant of the YOLOv5 family, balances detection accuracy and inference speed. With an input image size of **320x320x3**, the model is optimized for deployment on devices with limited computational resources, achieving excellent results for bounding box predictions and object classification.
 
