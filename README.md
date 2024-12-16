@@ -137,7 +137,7 @@ The exported model (`best-fp16.tflite`) is optimized for deployment.
 The Android app is designed for seamless use with the pre-trained model, which is already integrated and ready to run. For those interested in customization, the following steps explain how to integrate a custom-trained model into the app.
 
 ### 1. Download the Android App Files
-Download the app files from [this Dropbox link](https://www.dropbox.com/scl/fi/7ohu93t3qp5k342bvu3xh/yolov5-example-app.zip?rlkey=vxoihjipwsmhvj0op7720078p&st=kcev2tkt&dl=0).
+Download the app files from [this Dropbox link](https://www.dropbox.com/scl/fi/swv7q108dfq47frencldi/yolov5-example-app.zip?rlkey=c8lsvm4ub6im4yo6hu8dpyh5y&st=tpba5k7w&dl=0).
 
 ### 2. Download and Set Up Android Studio
 Ensure that you have [Android Studio](https://developer.android.com/studio) installed on your system. Open the `/android` directory in Android Studio. This setup has been tested with:
