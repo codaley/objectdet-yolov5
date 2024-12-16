@@ -10,7 +10,7 @@ While this project is not explicitly intended for autonomous driving systems, it
 - **Detecting a rock**: This could prompt a vehicle to swerve, avoiding potential damage.
 - **Detecting a bag**: This could help reduce unnecessary evasive actions, improving efficiency and safety.
 
-![Object Detection App](media/rockbag-yolov5-android.gif)
+![](media/rockbag-yolov5-android.gif)
 
 This project builds upon a previous implementation trained with the high-level **TensorFlow Lite Model Maker** library. While TensorFlow Lite Model Maker provides a user-friendly interface for quick prototyping, this new project leverages the power and flexibility of **PyTorch** to create an entirely custom model, resulting in significant improvements in accuracy and adaptability. By transitioning to PyTorch and the YOLOv5 framework, this project enables precise control over the training process, model architecture, and hyperparameter tuning, unlocking advanced capabilities for object detection.
 
@@ -53,17 +53,20 @@ Downloads/
 
 ---
 
-## Training Pipeline
+## Quickstart Guide
 
-This project uses custom scripts located in the `_scripts/` directory for training and exporting the model. The steps to train and export a model are as follows:
+### 1. Prepare the Dataset
 
-### 1. Dataset Preparation
-- **Annotations**: Images were annotated using [LabelImg](https://github.com/heartexlabs/labelImg), saved in YOLO format.
-- **Preprocessing**: Images were cropped to 1:1 squares at their original resolution. When calling the training script with `--img <size>`, images will be downsampled, and bounding box annotations automatically scaled to fit the chosen resolution.
-- **Configuration**: Edit `_configs/dataset.yaml` to match your dataset:
-  - `nc`: Number of classes.
-  - `names`: List of class names.
-  - `train` and `val`: Paths to your training and validation datasets.
+A. **Preprocess the Images**: Crop the images to 1:1 squares at their original resolution. When calling the training script with `--img <size>`, images will be downsampled, and bounding box annotations will automatically scale to fit the chosen resolution.
+
+B. **Annotate the Images**: Annotate your images using [LabelImg](https://github.com/heartexlabs/labelImg) and save them in YOLO format.
+
+C. **Configure the Dataset**:  
+   a. **Copy** your `train`, `test`, and `valid` folders into the `_dataset/` directory.  
+   b. **Edit** the `dataset.yaml` file in `_configs/` to match your dataset:  
+      - `nc`: Number of classes.  
+      - `names`: List of class names.  
+      - `train` and `val`: Paths to your training and validation datasets.  
 
 ### Example `_configs/dataset.yaml`:
 ```yaml
@@ -74,20 +77,51 @@ nc: 2
 names: ['rock', 'bag']
 ```
 
-### 2. Training the Model
-Run the following command to train the model:
+---
+
+### 2. Set Up the Environment
+
+1. Create a new Conda environment with Python 3.9:
+   ```bash
+   conda create -n yolov5-env python=3.9 -y
+   conda activate yolov5-env
+   ```
+
+2. Install the project requirements:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Install CUDA-specific PyTorch and torchvision packages:
+   ```bash
+   pip uninstall torch torchvision -y ; pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+   ```
+
+4. Verify CUDA availability:
+   ```bash
+   python -c "import torch;    print('CUDA Available:', torch.cuda.is_available());    print('CUDA Device Count:', torch.cuda.device_count());    print('Current CUDA Device:', torch.cuda.current_device() if torch.cuda.is_available() else 'No GPU');    print('CUDA Device Name:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'No GPU')"
+   ```
+
+---
+
+### 3. Train the Model
+
+Run the following command to start training:
 ```bash
 python _scripts/run_train.py --img 320 --batch 130 --epochs 170 --data _configs/dataset.yaml --cache --device 0 --patience 0
 ```
-- Adjust the flags (e.g., `--img`, `--batch`, `--epochs`) as needed.
+- Adjust the flags (e.g., `--img`, `--batch`, `--epochs`, `--patience`) as needed.
 
-### 3. Monitoring Training Metrics
-Launch TensorBoard to monitor training progress:
+### 4. Monitor Training Metrics
+Launch TensorBoard in a separate terminal session to visualize the training progress:
 ```bash
 tensorboard --logdir=runs/train --host=localhost --port=6006
 ```
 
-### 4. Exporting the Model
+---
+
+### 5. Export the Model
+
 Once training completes, export the model to TensorFlow Lite format:
 ```bash
 python _scripts/run_export.py --img 320 --weights runs/train/exp/weights/best.pt --include tflite
