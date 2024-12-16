@@ -1,9 +1,11 @@
-# COPY train, test and valid folders to _dataset/
+### COPY train, test and valid folders to _dataset/
 
-# EDIT dataset.yaml in _configs/ to match your dataset requirements
+### EDIT dataset.yaml in _configs/ to match your dataset requirements
+
+### Create new conda environment with Python 3.9 and activate it
+
 
 # TERMINAL TAB 1
-### Create new conda environment with Python 3.9 and activate it
 
 ### Install project requirements
 pip install -r requirements.txt
