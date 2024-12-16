@@ -57,13 +57,13 @@ Downloads/
 
 ### 1. Prepare the Dataset
 
-A. **Preprocess the Images**: Crop the images to 1:1 squares at their original resolution. When calling the training script with `--img <size>`, images will be downsampled, and bounding box annotations will automatically scale to fit the chosen resolution.
+Preprocess the Images: Crop the images to 1:1 squares at their original resolution. When calling the training script with `--img <size>`, images will be downsampled, and bounding box annotations will automatically scale to fit the chosen resolution.
 
-B. **Annotate the Images**: Annotate your images using [LabelImg](https://github.com/heartexlabs/labelImg) and save them in YOLO format.
+Annotate the Images: Annotate your images using [LabelImg](https://github.com/heartexlabs/labelImg) and save them in YOLO format.
 
-C. **Configure the Dataset**:  
-   a. **Copy** your `train`, `test`, and `valid` folders into the `_dataset/` directory.  
-   b. **Edit** the `dataset.yaml` file in `_configs/` to match your dataset:  
+Configure the Dataset:  
+   -**Copy** your `train`, `test`, and `valid` folders into the `_dataset/` directory.  
+   -**Edit** the `dataset.yaml` file in `_configs/` to match your dataset:  
       - `nc`: Number of classes.  
       - `names`: List of class names.  
       - `train` and `val`: Paths to your training and validation datasets.  
@@ -81,23 +81,23 @@ names: ['rock', 'bag']
 
 ### 2. Set Up the Environment
 
-1. Create a new Conda environment with Python 3.9:
+Create a new Conda environment with Python 3.9:
    ```bash
    conda create -n yolov5-env python=3.9 -y
    conda activate yolov5-env
    ```
 
-2. Install the project requirements:
+Install the project requirements:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Install CUDA-specific PyTorch and torchvision packages:
+Install CUDA-specific PyTorch and torchvision packages:
    ```bash
    pip uninstall torch torchvision -y ; pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
    ```
 
-4. Verify CUDA availability:
+Verify CUDA availability:
    ```bash
    python -c "import torch;    print('CUDA Available:', torch.cuda.is_available());    print('CUDA Device Count:', torch.cuda.device_count());    print('Current CUDA Device:', torch.cuda.current_device() if torch.cuda.is_available() else 'No GPU');    print('CUDA Device Name:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'No GPU')"
    ```
