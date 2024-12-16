@@ -59,7 +59,7 @@ This project uses custom scripts located in the `_scripts/` directory for traini
 
 ### 1. Dataset Preparation
 - **Annotations**: Images were annotated using [LabelImg](https://github.com/heartexlabs/labelImg), saved in YOLO format.
-- **Preprocessing**: Images were cropped to 1:1 squares at their original resolution. When calling the training script with `--img XXX`, images will be downsampled, and bounding box annotations automatically scaled to fit the chosen resolution.
+- **Preprocessing**: Images were cropped to 1:1 squares at their original resolution. When calling the training script with `--img <size>`, images will be downsampled, and bounding box annotations automatically scaled to fit the chosen resolution.
 - **Configuration**: Edit `_configs/dataset.yaml` to match your dataset:
   - `nc`: Number of classes.
   - `names`: List of class names.
