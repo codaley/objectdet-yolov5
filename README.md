@@ -8,7 +8,7 @@ While this project is not explicitly intended for autonomous driving systems, it
 
 **Example Logic:**
 - **Detecting a rock**: This could prompt a vehicle to swerve, avoiding potential damage.
-- **Detecting a bag**: This helps minimize unnecessary evasive actions, improving efficiency and safety.
+- **Detecting a bag**: This could help reduce unnecessary evasive actions, improving efficiency and safety.
 
 ![Object Detection App](media/rockbag-yolov5-android.gif)
 
