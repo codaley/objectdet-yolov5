@@ -157,6 +157,12 @@ The learning rate scheduler progressively reduces step size, balancing rapid ini
 
 ---
 
+## Privacy Notice
+
+**Training Data Privacy:** The dataset used to train this model contains images annotated for object detection. For privacy reasons and to protect personally identifiable information (PII) or sensitive data, the training dataset will not be shared publicly. All dataset annotations and images were used solely for the purpose of this project.
+
+---
+
 ## Future Work
 
 Potential enhancements include:
