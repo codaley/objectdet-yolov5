@@ -143,14 +143,14 @@ To add custom classes, edit the `customclasses.txt` file in the `assets` folder.
 - **Cls Loss**: Stabilizes at ~5e-4.  
 - **Obj Loss**: Steady decline to ~4.5e-3.
 
-- ### Validation Loss Analysis
+### Validation Loss Analysis
 - **Box Loss**: <0.012  
 - **Cls Loss**: Stabilizes to <1e-3.  
 - **Obj Loss**: Stabilizes to <2.2e-3. 
 
 Validation metrics confirm strong generalization with no overfitting.
 
-- ### Learning Rate Schedules
+### Learning Rate Schedules
 The learning rate scheduler progressively reduces step size, balancing rapid initial convergence with fine-tuning in later epochs. The smooth decay ensures stable optimization, preventing overshooting and guiding the model to an optimal solution.
 
 ![](media/tensorboard-metrics.png)
