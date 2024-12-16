@@ -4,13 +4,13 @@
 
 This project demonstrates the training and deployment of a custom object detection model using **YOLOv5m**, fine-tuned for detecting rocks and bags. The model is designed for efficient real-time inference on edge devices and is integrated into an **Android app** running on a **Pixel 7a**. The goal is to enable precise and lightweight object detection while ensuring user flexibility to customize the pipeline and app for their own use cases.
 
-![Object Detection App](media/rockbag-yolov5-android.gif)
-
 While this project is not explicitly intended for autonomous driving systems, it tackles challenges related to object misidentification in autonomous systems, such as distinguishing between rocks and bags, which can significantly impact decision-making and safety.
 
 **Example Logic:**
 - **Detecting a rock**: This could prompt a vehicle to swerve, avoiding potential damage.
 - **Detecting a bag**: This helps minimize unnecessary evasive actions, improving efficiency and safety.
+
+![Object Detection App](media/rockbag-yolov5-android.gif)
 
 This project builds upon a previous implementation trained with the high-level **TensorFlow Lite Model Maker** library. While TensorFlow Lite Model Maker provides a user-friendly interface for quick prototyping, this new project leverages the power and flexibility of **PyTorch** to create an entirely custom model, resulting in significant improvements in accuracy and adaptability. By transitioning to PyTorch and the YOLOv5 framework, this project enables precise control over the training process, model architecture, and hyperparameter tuning, unlocking advanced capabilities for object detection.
 
