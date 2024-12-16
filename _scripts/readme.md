@@ -30,5 +30,5 @@ python _scripts/run_export.py --img 320 --weights runs/train/exp/weights/best.pt
 
 
 # TERMINAL TAB 2
-### Once training begins on epoch 0 launch TensorBoard session:
+### Once training begins on epoch 0, launch TensorBoard session:
 tensorboard --logdir=runs/train --host=localhost --port=6006
