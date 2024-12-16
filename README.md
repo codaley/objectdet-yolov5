@@ -28,7 +28,7 @@ YOLOv5m, a mid-size variant of the YOLOv5 family, balances detection accuracy an
 
 ## Project Setup and Folder Structure
 
-After downloading the repository, you will notice the folder structure includes custom folders prefixed with `_` for easy identification. Ensure you extract the files correctly to avoid nested folders (`Downloads/objectdet-yolov5-master/objectdet-yolov5-master`). The final structure should look like this:
+After downloading the repository, you will notice the folder structure includes custom folders prefixed with `_` for easy identification. Ensure you extract the files correctly to avoid nested folders (i.e., `Downloads/objectdet-yolov5-master/objectdet-yolov5-master`). The final structure should look like this:
 
 ```
 Downloads/
