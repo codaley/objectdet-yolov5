@@ -23,7 +23,7 @@ print('Current CUDA Device:', torch.cuda.current_device() if torch.cuda.is_avail
 print('CUDA Device Name:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'No GPU')"
 
 ### Call training script:
-python _scripts/run_train.py --img 320 --batch 130 --epochs 2 --data _configs/dataset.yaml --cache --device 0 --patience 0
+python _scripts/run_train.py --img 320 --batch 130 --epochs 170 --data _configs/dataset.yaml --cache --device 0 --patience 0
 
 ### Once training completes call export script (change exp/ to the correct output directory of the newly trained model):
 python _scripts/run_export.py --img 320 --weights runs/train/exp/weights/best.pt --include tflite
