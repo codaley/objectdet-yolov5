@@ -10,8 +10,6 @@ While this project is not explicitly intended for autonomous driving systems, it
 - **Detecting a rock**: This could prompt a vehicle to swerve, avoiding potential damage.
 - **Detecting a bag**: This helps minimize unnecessary evasive actions, improving efficiency and safety.
 
-![Object Detection App](media/rockbag-yolov5-android.gif)
-
 This project builds upon a previous implementation trained with the high-level **TensorFlow Lite Model Maker** library. While TensorFlow Lite Model Maker provides a user-friendly interface for quick prototyping, this new project leverages the power and flexibility of **PyTorch** to create an entirely custom model, resulting in significant improvements in accuracy and adaptability. By transitioning to PyTorch and the YOLOv5 framework, this project enables precise control over the training process, model a...
 
 ### Why PyTorch?
@@ -23,6 +21,8 @@ This project builds upon a previous implementation trained with the high-level *
 By incorporating a significantly larger dataset and optimizing the training pipeline, this model excels in detecting objects with **improved mean Average Precision (mAP)**, high precision, and recall scores. These enhancements make the model highly reliable for real-world usage scenarios, even in challenging environments.
 
 YOLOv5m, a mid-size variant of the YOLOv5 family, balances detection accuracy and inference speed. With an input image size of **320x320x3**, the model is optimized for deployment on devices with limited computational resources, achieving excellent results for bounding box predictions and object classification.
+
+![Object Detection App](media/rockbag-yolov5-android.gif)
 
 ---
 
