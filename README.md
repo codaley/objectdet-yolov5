@@ -194,13 +194,13 @@ Once you have replaced the files, made the necessary modifications, and connecte
 
 ### Training Loss Analysis
 - **Box Loss**: ~0.012  
-- **Cls Loss**: Stabilizes at ~5e-4.  
-- **Obj Loss**: Steady decline to ~4.5e-3.
+- **Cls Loss**: ~5e-4.  
+- **Obj Loss**: ~4.5e-3.
 
 ### Validation Loss Analysis
 - **Box Loss**: <0.012  
-- **Cls Loss**: Stabilizes to <1e-3.  
-- **Obj Loss**: Stabilizes to <2.2e-3. 
+- **Cls Loss**: <1e-3.  
+- **Obj Loss**: <2.2e-3. 
 
 Validation metrics confirm strong generalization with no overfitting.
 
